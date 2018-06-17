@@ -43,7 +43,6 @@ CS=os.environ["CS"]
 AT=os.environ["AT"]
 AS=os.environ["AS"]
 
-pasta_classifier("https://pbs.twimg.com/media/Df0gXsyUYAEZJFB.jpg")
 auth = tweepy.OAuthHandler(CK, CS)
 auth.set_access_token(AT, AS)
 

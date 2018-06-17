@@ -1,2 +1,4 @@
 images/*
 classifier/pasta_model.sav
+twitterbot/twitter_bot.sh
+
