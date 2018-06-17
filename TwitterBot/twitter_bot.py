@@ -64,11 +64,12 @@ class Listener(tweepy.StreamListener):
                     tweet =  "この画像はカルボナーラです。\n https://twitter.com/" + status.user.screen_name + "/status/" +str(status_id) 
                 else:
                     tweet = "この画像はボロネーゼです。 \n https://twitter.com/" + status.user.screen_name + "/status/" + str(status_id)
+                api.update_status(status=tweet)
             except:
-                import traceback
-                traceback.print_exc()
                 tweet = "@" + str(status.user.screen_name) + " " + "こんにちは, このBotは\nカルボナーラかボロネーゼか\n分類できることができます。\n" 
-            api.update_status(status=tweet)
+                #import traceback
+                #traceback.print_exc()
+                api.update_status(status=tweet,in_reply_to_status_id=status_id)
         return True
 
     def on_error(self, status_code):
